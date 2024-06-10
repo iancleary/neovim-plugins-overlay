@@ -16,7 +16,7 @@ Example usage with flakes and home-manager.
         flake-utils.url = "github:numtide/flake-utils";
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        neovim-plugins = "github:LongerHV/neovim-plugins-overlay";
+        neovim-plugins = "github:iancleary/neovim-plugins-overlay";
         neovim-plugins.inputs.nixpkgs.follows = "nixpkgs";
     };
     outputs = { self, nixpkgs, neovim-plugins, flake-utils, home-manager, ... }@inputs:
