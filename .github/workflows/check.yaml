@@ -1,0 +1,20 @@
+---
+name: Check flake evaluation
+
+"on":
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    name: Run flake evaluation checks
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Build system with all plugins
+        run: |
+          nix build .#nixosConfigurations.test.config.system.build.toplevel
