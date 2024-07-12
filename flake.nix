@@ -69,14 +69,6 @@
       url = "github:onsails/lspkind-nvim";
       flake = false;
     };
-    copilot-lua = {
-      url = "github:zbirenbaum/copilot.lua";
-      flake = false;
-    };
-    copilot-cmp = {
-      url = "github:zbirenbaum/copilot-cmp";
-      flake = false;
-    };
   };
   outputs = { self, nixpkgs, ... }@inputs:
     let
